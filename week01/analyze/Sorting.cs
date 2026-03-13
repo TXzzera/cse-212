@@ -15,3 +15,5 @@
         }
     }
 }
+
+// big o notation = o(n^2) because of the nested for loops.  The inner loop is O(n) and the outer loop is O(n) so O(n) * O(n) = O(n^2)

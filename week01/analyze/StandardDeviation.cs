@@ -1,4 +1,6 @@
-﻿/// <summary>
+﻿using System.Numerics;
+
+/// <summary>
 /// These 3 functions will (in different ways) calculate the standard
 /// deviation from a list of numbers.  The standard deviation
 /// is defined as the square root of the variance.  The variance is 
@@ -29,6 +31,7 @@ public static class StandardDeviation {
         var variance = sumSquaredDifferences / count;
         return Math.Sqrt(variance);
     }
+    // big o notation = o(n) because of the two separate for loops.  The first loop is O(n) and the second loop is O(n) so O(n) + O(n) = O(n)
 
     private static double StandardDeviation2(int[] numbers) {
         var sumSquaredDifferences = 0.0;
@@ -49,6 +52,7 @@ public static class StandardDeviation {
         var variance = sumSquaredDifferences / countNumbers;
         return Math.Sqrt(variance);
     }
+    //big o notation = o(n^2) because of the nested for loops.  The inner loop is O(n) and the outer loop is O(n) so O(n) * O(n) = O(n^2)
 
     private static double StandardDeviation3(int[] numbers) {
         var count = numbers.Length;
@@ -62,3 +66,4 @@ public static class StandardDeviation {
         return Math.Sqrt(variance);
     }
 }
+// big o notation = o(n) 
