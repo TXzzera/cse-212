@@ -8,12 +8,18 @@ public static class Arrays
     /// <returns>array of doubles that are the multiples of the supplied number</returns>
     public static double[] MultiplesOf(double number, int length)
     {
-        // TODO Problem 1 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+        // 1 - I'll create an array with the size equal to the number of multiples
+        double[] multiples = new double[length];
 
-        return []; // replace this return statement with your own
+        // 2 - Loop from 1 to the number of multiples
+        for (int i = 0; i < length; i++)
+        {
+            // 3 - Multiply the starting number by the loop counter
+            multiples[i] = number * (i + 1);
+            // 4 - Store each result in the array
+        }
+        // 5 - Return the array
+        return multiples;
     }
 
     /// <summary>
@@ -25,9 +31,22 @@ public static class Arrays
     /// </summary>
     public static void RotateListRight(List<int> data, int amount)
     {
-        // TODO Problem 2 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+        // 1 - I'll Determine the size of the list
+        int size = data.Count;
+
+        // 2 - Get the last amount elements
+        List<int> lastPart = data.GetRange(size - amount, amount);
+
+        // 3 - Get the first elements
+        List<int> firstPart = data.GetRange(0, size - amount);
+
+        // 4 - Clear the original list
+         data.Clear();
+
+        // 5 - Add the last elements first
+        data.AddRange(lastPart);
+
+        // 6 - Add the first elements after (I'll switch the order of the first and last parts)
+        data.AddRange(firstPart);
     }
 }
