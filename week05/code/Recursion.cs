@@ -165,14 +165,14 @@ public static class Recursion
         // currPath.Add((1,2)); // Use this syntax to add to the current path
 
         // TODO Start Problem 5
-        if (!maze.IsValidMove(x, y)) {
+        if (!maze.IsValidMove(currPath, x, y)) {
             return;
         }
 
         currPath.Add((x, y));
 
         if (maze.IsEnd(x, y)) {
-            results.Add(string.Join("->", currPath));
+            results.Add(currPath.AsString());
             currPath.RemoveAt(currPath.Count - 1);
             return;
         }
